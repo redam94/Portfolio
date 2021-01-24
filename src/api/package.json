@@ -1,0 +1,20 @@
+{
+  "name": "tensorflow_api",
+  "version": "0.1.0",
+  "description": "Serve tensorflow models",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tensorflow",
+    "deeplearning",
+    "models"
+  ],
+  "author": "Matthew Reda",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
