@@ -1,0 +1,60 @@
+{
+    "projects":[
+        {
+            "name": "Cat or Dog Classifier",
+            "description": "Using transfer learning is an effective way to gain insight when data is limited. Using a model that was previously trained on a large dataset in a similar domain and only using a small amount of data to train",
+            "key": 1,
+            "pic": "./catvdog.jpg",
+            "keywords": [
+                "CNN",
+                "Tensorflow",
+                "MachineLearning",
+                "TransferLearning"
+            ]
+        },
+        {
+            "name": "Disaster Response Pipeline",
+            "description": "Using a sklearn pipeline enables the deployment of a robust machinel earning model.",
+            "key":2,
+            "pic": "./dataPipeline.png",
+            "keywords":[
+                "DataPipeline",
+                "NLP"
+
+            ]
+        },
+        {
+            "name": "Dog Breed Classifier",
+            "description": "This is yet another project",
+            "key":3,
+            "pic": "./DBC.jpg",
+            "keywords":[
+                "CNN",
+                "Tensorflow",
+                "MachineLearning"
+            ]
+        },
+        {
+            "name": "Facial Keypoint Detection",
+            "description": "This is another project",
+            "key": 4,
+            "pic": "",
+            "keywords":[
+                "MachineLearning",
+                "PyTorch",
+                "DataPipeline"
+            ]
+        },
+        {
+            "name": "IMDB Project",
+            "description": "",
+            "key": 5,
+            "pic": "",
+            "keywords":[
+                "MachineLearning",
+                "NLP",
+                "Tensorflow"
+            ]
+        }
+    ]
+}
