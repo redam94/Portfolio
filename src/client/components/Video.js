@@ -23,27 +23,27 @@ export default class Video extends React.Component{
         navigator
             .mediaDevices
             .getUserMedia(this.constraints)
-            .then(stream=>{
-                var video = document.getElementById(this.props.myId)
+            .then( stream => {
+                var video = document.getElementById(this.props.myId);
                 video.srcObject = stream;
-                video.onloadedmetadata = e => video.play()
+                video.onloadedmetadata = e => video.play();
             })
             .catch(err=>{
-                console.log(err.name+': '+err.message)
+                console.log(err.name+': '+err.message);
             })
     }
     deactivateWebcam(){
         if(this.state.isLive){
             return
         }
-        var video = document.getElementById(this.props.myId)
+        var video = document.getElementById(this.props.myId);
         if(video.srcObject){
-            video.srcObject.getTracks().forEach(track=>track.stop())
+            video.srcObject.getTracks().forEach(track=>track.stop());
         }
-        video.srcObject = undefined
+        video.srcObject = undefined;
         this.setState(prev=>{
             return {isLive: !prev.isLive}
-        })
+        });
     }
     render(){
         return (
