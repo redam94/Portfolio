@@ -1,5 +1,5 @@
 import React from "react"
-import {projects} from "../assets/projects.json"
+import { projects } from "../assets/projects.json"
 import { Project } from "../components"
 
 export default class Projects extends React.Component{

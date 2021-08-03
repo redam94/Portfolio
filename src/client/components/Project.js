@@ -13,11 +13,11 @@ export default class Project extends React.Component{
                     flex-column  
                     m-4 
                     p-2
-                    text-left
+                    
                     shadow-md">
-                <h3 className="text-3xl m-2">{project.name}</h3>
+                <h3 className="text-3xl m-2" style={{alignSelf: 'center'}}>{project.name}</h3>
                 <p className='m-4'>{project.description}</p>
-                <Container flex="true" className='mx-0'>
+                <Container flex="true" className='mx-0 items-center'>
                         <Button 
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'

@@ -25,7 +25,7 @@
         },
         {
             "name": "Dog Breed Classifier",
-            "description": "This is yet another project",
+            "description": "CNNs are excillent at using image data to perform inference. In this project a cnn is trained to identify dog breed from images of dogs.",
             "key":3,
             "pic": "./DBC.jpg",
             "keywords":[
@@ -36,7 +36,7 @@
         },
         {
             "name": "Facial Keypoint Detection",
-            "description": "This is another project",
+            "description": "Understanding facial expressions is a trivial task for our brains. ",
             "key": 4,
             "pic": "",
             "keywords":[
