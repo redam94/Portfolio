@@ -10,12 +10,12 @@ app.get("/", (requst, response) => {
 
 app.get("/transformer", (request, response, next) => {
     console.log(request)
-    response.sendFile(__dirname+"/assets/transformer/model.json");
+    response.sendFile(__dirname+"/assets/models/transformer/model.json");
 });
 
 app.get("/disaster", (request, response, next) => {
     console.log(request)
-    response.sendFile(__dirname + "/assets/disaster/model.json");
+    response.sendFile(__dirname + "/assets/models/disaster/model.json");
 });
 
 const listener = app.listen(3999, () => {
