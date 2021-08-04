@@ -12,6 +12,8 @@ services:
             - CHOKIDAR_USEPOLLING=true
         stdin_open: true
     api-dev:
-        build: ./src/api
+        build: 
+            context: ./src/api
+            dockerfile: Dockerfile.api
         ports:
             - '3999:3999'
