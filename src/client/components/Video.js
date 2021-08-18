@@ -24,7 +24,7 @@ export default class Video extends React.Component{
             .mediaDevices
             .getUserMedia(this.constraints)
             .then( stream => {
-                var video = document.getElementById(this.props.myId);
+                var video = this.props.videoRef.current;
                 video.srcObject = stream;
                 video.onloadedmetadata = e => video.play();
             })
@@ -36,7 +36,7 @@ export default class Video extends React.Component{
         if(this.state.isLive){
             return
         }
-        var video = document.getElementById(this.props.myId);
+        var video = this.props.videoRef.current;
         if(video.srcObject){
             video.srcObject.getTracks().forEach(track=>track.stop());
         }
@@ -53,7 +53,7 @@ export default class Video extends React.Component{
                         justify-center rounded-lg 
                         shadow-md h-auto w-auto' 
                     autoPlay 
-                    id={this.props.myId} 
+                    ref={this.props.videoRef} 
                     width={this.props.width} 
                     height={this.props.height}
                     hidden={this.state.isLive}>    

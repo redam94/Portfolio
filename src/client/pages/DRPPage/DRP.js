@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
-import Model from '../assets/disasterModel'
+import Model from './assets/disasterModel'
 
 
 export default class IMDB extends React.Component {

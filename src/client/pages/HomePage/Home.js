@@ -1,5 +1,5 @@
 import React from "react"
-import {Banner, Featured} from "../components"
+import {Banner, Featured} from "./components"
 
 export default class Home extends React.Component{
     render(){

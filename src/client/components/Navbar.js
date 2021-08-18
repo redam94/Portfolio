@@ -1,5 +1,5 @@
 import React from "react"
-import {Button, Form, FormControl, Nav} from 'react-bootstrap'
+import {Nav} from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 
 export default class MyNav extends React.Component {
@@ -30,10 +30,7 @@ export default class MyNav extends React.Component {
                     ))
                     }   
                     </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
-                        <Button variant="outline-info">Search</Button>
-                    </Form>
+                    
                 </Navbar>
             </div>
         )

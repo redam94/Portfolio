@@ -1,6 +1,6 @@
 import React from "react"
 import {Carousel} from "react-bootstrap"
-import {projects} from "../assets/projects.json"
+import {projects} from "../../../assets/projects.json"
 import FeaturedItem from "./FeaturedItem"
 
 export default class Featured extends React.Component{
