@@ -4,21 +4,23 @@ class Model {
 
     constructor(){
       
-      this.URL = process.env.REACT_APP_DISASTER_MODEL
+      this.URL = process.env.REACT_APP_BASE_MODEL + 'cvd/model.json';
     
     }
   
     bmp_to_img = (bmp) => {
         try {
             var img = tf.browser.fromPixels(bmp);
-            img.print();
+            console.log(img.shape)
+            return img;
         }catch (error){
-            console.log(error)
+            console.log(error);
         }
+        return tf.zeros([512, 512, 3]);
     }
   
     async getModel(){
-  
+        
     } 
   
     async  makeInference(photo){
@@ -26,7 +28,5 @@ class Model {
   }
   
   }
-  //tf.io.browserFiles(
-  //    [uploadJ.files[0], uploadWeights.files[0], uploadWeight3.files[0]]
-  //    )
+ 
   export default Model

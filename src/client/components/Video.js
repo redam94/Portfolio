@@ -76,6 +76,16 @@ export default class Video extends React.Component{
                                shadow-md'
                         variant='secondary'
                         hidden={this.state.isLive}
+                        onClick={this.props.myFunction}>
+                        Run
+                    </Button>
+                    <Button
+                        className='h-12 w-16 
+                        justify-center rounded-lg 
+                        my-2 mx-2
+                        shadow-md'
+                        variant='secondary'
+                        hidden={this.state.isLive}
                         onClick={this.deactivateWebcam}>
                         Stop
                     </Button>
