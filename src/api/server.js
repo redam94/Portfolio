@@ -18,6 +18,11 @@ app.get("/disaster", (request, response, next) => {
     response.sendFile(__dirname + "/assets/models/disaster/model.json");
 });
 
+app.get("/cvd", (request, response, next) => {
+    console.log(request);
+    response.sendFile(__dirname+"assets/models/cvd/model.json");
+});
+
 const listener = app.listen(3999, () => {
     console.log("Your app is listening on port "+listener.address().port);
 });

@@ -10,22 +10,40 @@ class Model {
   
     bmp_to_img = (bmp) => {
         try {
-            var img = tf.browser.fromPixels(bmp);
-            console.log(img.shape)
+            const img = tf.browser.fromPixels(bmp);
             return img;
         }catch (error){
             console.log(error);
         }
-        return tf.zeros([512, 512, 3]);
+        return tf.zeros([128, 128, 3]);
     }
-  
-    async getModel(){
-        
+    
+    preprocess_photo = (img) => {
+        const resize_img = tf.image.resizeBilinear(img, [128, 128]);
+        return resize_img;
+    }
+
+    getModel = async () => {
+        const model = tf.loadGraphModel(this.URL);
+        return model;
     } 
-  
-    async  makeInference(photo){
-      
-  }
+    
+    post_process = (output) => {
+        return output
+    }
+
+    makeInference = async (bmp) => {
+        var img = this.bmp_to_img(bmp);
+        img = this.preprocess_photo(img);
+        const model = await tf.loadGraphModel(this.URL);
+        
+        var output = await model
+            .predict(img.expandDims(0))
+            .array();
+        
+        output = (output[0][0]<.5)?"Cat":"Dog"
+        return output
+    }
   
   }
  

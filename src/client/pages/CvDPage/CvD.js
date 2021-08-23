@@ -10,6 +10,9 @@ export default class CVD extends React.Component{
         this.photo = null
         this.model = new Model()
         this.mediaStream = React.createRef()
+        this.state = {
+            isDog: ''
+        }
     }
     
     takePicture = () => {
@@ -19,7 +22,13 @@ export default class CVD extends React.Component{
             var imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0]);
             imageCapture.grabFrame().then(photo =>{
                 this.photo = photo || null;
-                this.model.bmp_to_img(this.photo)
+                this.model
+                    .makeInference(this.photo)
+                    .then(out => {
+                        this.setState(prevState => {
+                            return {isDog: out}})
+                    })
+                
             })
         }else{
             alert("No active Camera")
@@ -35,7 +44,7 @@ export default class CVD extends React.Component{
                     Cat vs Dog Classifier
                 </div>
             <Video videoRef={this.mediaStream} height={256} width={256} myFunction={this.takePicture}/>
-            
+            <p className="text-4xl">{this.state.isDog}</p>
         </div>
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jumbotron, Container, Button } from 'react-bootstrap'
+import { Jumbotron,  Button } from 'react-bootstrap'
 
 export default class Project extends React.Component{
     render(){
@@ -13,11 +13,10 @@ export default class Project extends React.Component{
                     flex-column  
                     m-4 
                     p-2
-                    
                     shadow-md">
                 <h3 className="text-3xl m-2" style={{alignSelf: 'center'}}>{project.name}</h3>
                 <p className='m-4'>{project.description}</p>
-                <Container flex="true" className='mx-0 items-center'>
+                <div flex="true" className='mx-0' style={{alignSelf: 'center', alignItems: 'center'}}>
                         <Button 
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'
@@ -25,7 +24,7 @@ export default class Project extends React.Component{
                         <Button 
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'>Source Code</Button>
-                </Container>
+                </div>
             </Jumbotron>
         )
     }
