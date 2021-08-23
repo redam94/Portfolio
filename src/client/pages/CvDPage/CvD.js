@@ -20,6 +20,7 @@ export default class CVD extends React.Component{
         var mediaStream = media.srcObject;
         if (mediaStream) {
             var imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0]);
+            this.setState({isDog: "Thinking ...."})
             imageCapture.grabFrame().then(photo =>{
                 this.photo = photo || null;
                 this.model
