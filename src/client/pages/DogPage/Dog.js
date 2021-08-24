@@ -3,15 +3,16 @@ import {Video} from "../../components"
 import Model from "./assets/dogModel"
 
 
-export default class CVD extends React.Component{
+export default class Dog extends React.Component{
     
     constructor(props){
         super(props)
         this.photo = null
         this.model = new Model()
         this.mediaStream = React.createRef()
+        this.out = [];
         this.state = {
-            isDog: ''
+            isDog: [],
         }
     }
     
@@ -21,15 +22,15 @@ export default class CVD extends React.Component{
         if (mediaStream) {
             var imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0]);
             this.setState({isDog: "Thinking ...."})
-            imageCapture.grabFrame().then(photo =>{
+            imageCapture.grabFrame().then(async (photo) =>{
                 this.photo = photo || null;
-                this.model
-                    .makeInference(this.photo)
-                    .then(out => {
-                        console.log(out)
-                        this.setState(prevState => {
-                            return {isDog: this.model.dogNames[out[0]]}})
-                    })
+                var out = await this.model
+                            .makeInference(this.photo)
+                
+                this.setState(state => {
+                    return {isDog: out}
+                })
+                
                 
             })
         }else{
@@ -37,6 +38,9 @@ export default class CVD extends React.Component{
         }
     }
     
+    printTopDogs = (value, index) => {
+        return <div key={value+index}>{String(index+1)+". "+this.model.dogNames[value]}</div>
+    }
     render(){
         return (
         <div className="w-full hide-overlap h-full bg-gray-100 flex text-center flex-column box" style={{height: 'auto'}}>
@@ -46,7 +50,7 @@ export default class CVD extends React.Component{
                     Dog Breed Classifier
                 </div>
             <Video videoRef={this.mediaStream} height={256} width={256} myFunction={this.takePicture}/>
-            <p className="text-4xl">{this.state.isDog}</p>
+            {typeof(this.state.isDog)==typeof('String')?this.state.isDog:this.state.isDog.map(this.printTopDogs)}
         </div>
         )
     }
