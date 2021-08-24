@@ -4,7 +4,7 @@ class Model {
 
     constructor(){
       
-      this.URL =  process.env.REACT_APP_BASE_MODEL + 'dog/model.json'; //'http://localhost:3999/models/dogs/model.json'
+      this.URL =  process.env.REACT_APP_BASE_MODEL + 'dogs/model.json'; //'http://localhost:3999/models/dogs/model.json'
       this.dogNames = [
           'Affenpinscher',
           'Afghan_hound',
