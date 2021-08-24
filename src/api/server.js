@@ -23,9 +23,9 @@ app.get("/cvd", (request, response, next) => {
     response.sendFile(__dirname+"/assets/models/cvd/model.json");
 });
 
-app.get("/dog", (request, response, next) => {
+app.get("/dogs", (request, response, next) => {
     console.log(request);
-    response.sendFile(__dirname+"/assets/models/dog/model.json");
+    response.sendFile(__dirname+"/assets/models/dogs/model.json");
 });
 
 const listener = app.listen(3999, () => {

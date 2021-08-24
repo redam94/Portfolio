@@ -13,7 +13,8 @@ import {
   CVD,
   NotFound,
   DRP,
-  IMDB
+  IMDB,
+  Dog
 } from './client/pages';
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route exact path='/projects/imdb_project'>
             <IMDB/>
+          </Route>
+          <Route exact path='/projects/dog_breed_classifier'>
+            <Dog/>
           </Route>
           <Route component={NotFound}/>
         </Switch>

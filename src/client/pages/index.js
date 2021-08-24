@@ -5,6 +5,7 @@ import CVD from './CvDPage/CvD'
 import IMDB from './IMDBPage/IMDB'
 import DRP from './DRPPage/DRP'
 import NotFound from './NotFound'
+import Dog from './DogPage/Dog'
 
 export {
     Home, 
@@ -13,5 +14,6 @@ export {
     CVD, 
     NotFound,
     IMDB,
-    DRP
+    DRP,
+    Dog
 }
