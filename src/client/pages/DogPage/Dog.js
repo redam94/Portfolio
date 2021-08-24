@@ -28,7 +28,7 @@ export default class Dog extends React.Component{
                             .makeInference(this.photo)
                 
                 this.setState(state => {
-                    return {isDog: out}
+                    return {isDog: out[0]}
                 })
                 
                 

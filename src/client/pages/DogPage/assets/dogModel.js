@@ -4,7 +4,7 @@ class Model {
 
     constructor(){
       
-      this.URL =  'http://localhost:3999/models/dogs/model.json'//process.env.REACT_APP_BASE_MODEL + 'dogs/model.json'; //'http://localhost:3999/models/dogs/model.json'
+      this.URL =  process.env.REACT_APP_BASE_MODEL + 'dogs/model.json'; //'http://localhost:3999/models/dogs/model.json'
       this.dogNames = [
           'Affenpinscher',
           'Afghan_hound',
@@ -177,9 +177,9 @@ class Model {
             .array();
         
         var {indices} = await tf.topk(output, 5)
-        indices = await indices.array()
+        indices = indices.array()
         model.dispose()
-        return indices[0]
+        return indices
     }
   
   }

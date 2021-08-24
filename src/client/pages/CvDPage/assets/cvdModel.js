@@ -19,8 +19,8 @@ class Model {
     }
     
     preprocess_photo = (img) => {
-        const resize_img = tf.image.resizeBilinear(img, [128, 128]);
-        return resize_img;
+        const resize_img = tf.image.resizeNearestNeighbor(img, [128, 128]);
+        return tf.mul(resize_img, tf.scalar(1./255));
     }
 
     getModel = async () => {

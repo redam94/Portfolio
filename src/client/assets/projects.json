@@ -25,7 +25,7 @@
         },
         {
             "name": "Dog Breed Classifier",
-            "description": "CNNs are excillent at using image data to perform inference. In this project a cnn is trained to identify dog breed from images of dogs.",
+            "description": "CNNs are excellent at using image data to perform inference. In this project a cnn is trained to identify dog breed from images of dogs.",
             "key":3,
             "pic": "./DBC.jpg",
             "keywords":[
