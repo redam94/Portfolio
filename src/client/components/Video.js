@@ -5,10 +5,11 @@ export default class Video extends React.Component{
     constructor(props){
         super(props)
         this.constraints = {
-            video: { width:this.props.width, height: this.props.height}
+            video: { width:this.props.width, height: this.props.height, facingMode: "environment"}
         }
         this.state = {
-            isLive: true
+            isLive: true,
+            facingMode: "environment"
         }
         this.activateWebcam=this.activateWebcam.bind(this)
         this.deactivateWebcam= this.deactivateWebcam.bind(this)
@@ -22,7 +23,7 @@ export default class Video extends React.Component{
         })
         navigator
             .mediaDevices
-            .getUserMedia(this.constraints)
+            .getUserMedia({video: {...this.constraints.video}})
             .then( stream => {
                 var video = this.props.videoRef.current;
                 video.srcObject = stream;
@@ -45,6 +46,34 @@ export default class Video extends React.Component{
             return {isLive: !prev.isLive}
         });
     }
+    rotateWebcam = () => {
+        if (this.state.facingMode == "environment"){
+            this.setState(state => {
+                return {...state, facingMode: "user"}
+            })
+        } else{
+            this.setState(state => {
+                return {...state, facingMode:"environment"}
+            })
+        }
+        var video = this.props.videoRef.current;
+        if(video.srcObject){
+            video.srcObject.getTracks().forEach(track=>track.stop());
+        }
+        video.srcObject = undefined;
+        navigator
+            .mediaDevices
+            .getUserMedia({video: {...this.constraints.video, facingMode: this.state.facingMode}})
+            .then( stream => {
+                var video = this.props.videoRef.current;
+                video.srcObject = stream;
+                video.onloadedmetadata = e => video.play();
+            })
+            .catch(err=>{
+                console.log(err.name+': '+err.message);
+            })
+    }
+
     render(){
         return (
             <div className='flex w-full justify-center py-12'> 
@@ -70,7 +99,7 @@ export default class Video extends React.Component{
                         Start Webcam
                     </Button>
                     <Button 
-                        className='h-12 w-16 
+                        className='h-12 w-18 
                                justify-center rounded-lg 
                                my-2 mx-2
                                shadow-md'
@@ -80,7 +109,17 @@ export default class Video extends React.Component{
                         Run
                     </Button>
                     <Button
-                        className='h-12 w-16 
+                        className='h-12 w-18 
+                        justify-center rounded-lg 
+                        my-2 mx-2
+                        shadow-md'
+                        variant='secondary'
+                        hidden={this.state.isLive}
+                        onClick={this.rotateWebcam}>
+                            Rotate
+                    </Button>
+                    <Button
+                        className='h-12 w-18 
                         justify-center rounded-lg 
                         my-2 mx-2
                         shadow-md'
