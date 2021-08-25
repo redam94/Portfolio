@@ -47,7 +47,7 @@ export default class Video extends React.Component{
         });
     }
     rotateWebcam = () => {
-        if (this.state.facingMode == "environment"){
+        if (this.state.facingMode === "environment"){
             this.setState(state => {
                 return {...state, facingMode: "user"}
             })

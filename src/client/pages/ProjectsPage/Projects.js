@@ -1,23 +1,25 @@
-import React from "react"
+import React, {lazy, Suspense} from "react"
+import { Image } from "react-bootstrap"
 import { projects } from "../../assets/projects.json"
-import Project from "./components/Project"
+const Project = lazy( () => import("./components/Project"))
 
 export default class Projects extends React.Component{
 
     render(){
         return (
-            <div 
+            <Suspense
                 className='
                     w-full 
                     flex
                     flex-column 
-                    box'>
+                    box'
+                fallback={<Image className='banner-img align-self-center' src="profile.png" alt='Matthew Profile' rounded/>}>
                 {
                     projects.map(project=>(
                         <Project project={project} key={project.key}/>
                     ))
                 }
-            </div>
+            </Suspense>
         )
     }
 }

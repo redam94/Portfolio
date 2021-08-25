@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import {Navbar} from './client/components'
 import {
   BrowserRouter as Router,
@@ -6,16 +6,15 @@ import {
   Route,
 } from "react-router-dom"
 import "./App.css";
-import {
-  Home,
-  Projects,
-  About, 
-  CVD,
-  NotFound,
-  DRP,
-  IMDB,
-  Dog
-} from './client/pages';
+
+const Home = lazy( () => import('./client/pages/HomePage/Home'))
+const Projects = lazy( () => import('./client/pages/ProjectsPage/Projects'))
+const About = lazy( () => import('./client/pages/AboutPage/About'))
+const CVD = lazy( () => import('./client/pages/CvDPage/CvD'))
+const NotFound = lazy( () => import('./client/pages/NotFound'))
+const DRP = lazy( () => import('./client/pages/DRPPage/DRP'))
+const IMDB = lazy( () => import('./client/pages/IMDBPage/IMDB'))
+const Dog = lazy( () => import('./client/pages/DogPage/Dog'))
 
 function App() {
   return (
@@ -27,6 +26,7 @@ function App() {
     <Router>
       
         <Navbar/>
+        <Suspense fallback={<div>loading</div>}>
         <Switch>
           <Route exact path='/'>
             <Home/>
@@ -51,6 +51,7 @@ function App() {
           </Route>
           <Route component={NotFound}/>
         </Switch>
+        </Suspense>
     </Router>
     </main>
   );
