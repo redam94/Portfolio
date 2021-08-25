@@ -19,9 +19,7 @@ import {
 
 function App() {
   return (
-    <main className="
-        w-full 
-        h-full 
+    <main className=" 
         bg-gray-100
         p-0
         m-0
