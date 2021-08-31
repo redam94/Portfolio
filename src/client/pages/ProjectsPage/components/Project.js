@@ -14,7 +14,6 @@ export default class Project extends React.Component{
                     m-4 
                     p-2
                     shadow-md
-                    
                     max-w-sm
                     sm:max-w-xl
                     md:max-w-2xl
