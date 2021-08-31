@@ -13,7 +13,13 @@ export default class Project extends React.Component{
                     flex-column  
                     m-4 
                     p-2
-                    shadow-md">
+                    shadow-md
+                    
+                    max-w-sm
+                    sm:max-w-xl
+                    md:max-w-2xl
+                    lg:max-w-3xl
+                    mx-auto">
                 <h3 className="text-3xl m-2" style={{alignSelf: 'center'}}>{project.name}</h3>
                 <p className='m-4'>{project.description}</p>
                 <div flex="true" className='mx-0' style={{alignSelf: 'center', alignItems: 'center'}}>

@@ -7,13 +7,8 @@ export default class Projects extends React.Component{
 
     render(){
         return (
-            <Suspense
-                className='
-                    w-full 
-                    flex
-                    flex-column 
-                    box'
-                fallback={<Image className='banner-img align-self-center' src="profile.png" alt='Matthew Profile' rounded/>}>
+            <Suspense 
+                className='w-full flex flex-column box' fallback={<Image className='banner-img align-self-center' src="profile.png" alt='Matthew Profile' rounded/>}>
                 {
                     projects.map(project=>(
                         <Project project={project} key={project.key}/>
