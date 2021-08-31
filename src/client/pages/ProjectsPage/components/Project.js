@@ -18,7 +18,7 @@ export default class Project extends React.Component{
                     max-w-sm
                     sm:max-w-xl
                     md:max-w-2xl
-                    lg:max-w-3xl
+                    lg:max-w-3xld
                     mx-auto">
                 <h3 className="text-3xl m-2" style={{alignSelf: 'center'}}>{project.name}</h3>
                 <p className='m-4'>{project.description}</p>
