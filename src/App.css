@@ -18,21 +18,21 @@
     margin-bottom: 0;
     height:24rem;
 }
-@media (max-width:1000px){
+@media (max-width:300px){
     .banner {
         height: auto;
     }
     .banner-img{
-        width:280px;
-        justify-self: flex-start;
+        width:250px;
+        height: 250px;
     }
 }
 .banner h3{
     font-size: xx-large;
 }
 .banner-img{
-    width: 280px;
-    justify-self: flex-end;
+    width: 250px;
+    height: 250px;
 }
 .justify-right {
     display: grid;

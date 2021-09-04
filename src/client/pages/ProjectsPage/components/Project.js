@@ -21,7 +21,14 @@ export default class Project extends React.Component{
                     mx-auto">
                 <h3 className="text-3xl m-2" style={{alignSelf: 'center'}}>{project.name}</h3>
                 <p className='m-4'>{project.description}</p>
-                <div flex="true" className='mx-0' style={{alignSelf: 'center', alignItems: 'center'}}>
+                <div 
+                    className="
+                        flex
+                        mx-0
+                        self-center
+                        items-center
+                        " 
+                        >
                         <Button 
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'
