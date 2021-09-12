@@ -16,7 +16,7 @@
 
 .banner {
     margin-bottom: 0;
-    height:24rem;
+    height: auto;
 }
 @media (max-width:300px){
     .banner {
@@ -33,6 +33,7 @@
 .banner-img{
     width: 250px;
     height: 250px;
+    min-width: 250px;
 }
 .justify-right {
     display: grid;
