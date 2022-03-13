@@ -3,6 +3,19 @@ import { Image } from "react-bootstrap"
 import { projects } from "../../assets/projects.json"
 const Project = lazy( () => import("./components/Project"))
 
+const covid_dashboard = {
+        "name": "Covid-19 Dashboard",
+        "description": "",
+        "key": 20,
+        "pic": "",
+        "keywords": [
+            "CNN",
+            "Tensorflow",
+            "MachineLearning",
+            "TransferLearning"
+        ]
+};
+
 export default class Projects extends React.Component{
 
     render(){
@@ -14,6 +27,7 @@ export default class Projects extends React.Component{
                         <Project project={project} key={project.key}/>
                     ))
                 }
+                <Project project={covid_dashboard} link={"http://covid-19-us-dashboard.herokuapp.com/"}/>
             </Suspense>
         )
     }
