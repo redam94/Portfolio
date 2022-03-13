@@ -4,7 +4,8 @@ import { Jumbotron,  Button } from 'react-bootstrap'
 export default class Project extends React.Component{
     render(){
         const project = this.props.project
-        const ref = "\\projects\\" + project.name.toLowerCase().split(" ").join("_")
+        const ref = this.props?.link || "\\projects\\" + project.name.toLowerCase().split(" ").join("_")
+        const sourceCode = this.props?.sourceCode || ""
         return (
             <Jumbotron 
                 fluid 
@@ -33,9 +34,10 @@ export default class Project extends React.Component{
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'
                             href={ref}>Demo</Button>
-                        <Button 
+                        { sourceCode && <Button 
                             variant="secondary" 
                             className='mx-2 hover:shadow-md'>Source Code</Button>
+                        }
                 </div>
             </Jumbotron>
         )
