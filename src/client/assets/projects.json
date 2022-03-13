@@ -35,17 +35,6 @@
             ]
         },
         {
-            "name": "Facial Keypoint Detection",
-            "description": "Understanding facial expressions is a trivial task for our brains. ",
-            "key": 4,
-            "pic": "",
-            "keywords":[
-                "MachineLearning",
-                "PyTorch",
-                "DataPipeline"
-            ]
-        },
-        {
             "name": "IMDB Project",
             "description": "",
             "key": 5,

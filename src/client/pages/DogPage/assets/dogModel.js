@@ -5,6 +5,7 @@ class Model {
     constructor(){
       
       this.URL =  process.env.REACT_APP_BASE_MODEL + 'dogs/model.json'; //'http://localhost:3999/models/dogs/model.json'
+      console.log(this.URL);
       this.dogNames = [
           'Affenpinscher',
           'Afghan_hound',
